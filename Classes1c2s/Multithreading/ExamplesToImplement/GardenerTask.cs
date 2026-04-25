@@ -35,12 +35,24 @@ class GardenSimulation
 
     static void Gardener1Action()
     {
-        
+        for (int i = 0; i < rows; i++)
+        for (int j = 0; j < cols; j++)
+        {
+            if (garden[i, j] == '.')
+                garden[i, j] = '1';
+            Thread.Sleep(100);
+        }
     }
 
     static void Gardener2Action()
     {
-       
+        for (int i = rows - 1; i >= 0; i--)
+        for (int j = cols - 1; j >= 0; j--)
+        {
+            if (garden[i, j] == '.')
+                garden[i, j] = '2';
+            Thread.Sleep(100);
+        }
     }
 
     static void PrintGarden()
@@ -52,6 +64,7 @@ class GardenSimulation
             {
                 Console.Write(garden[i, j] + " ");
             }
+
             Console.WriteLine();
         }
     }

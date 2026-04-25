@@ -67,7 +67,7 @@ class AdvancedGarden
     static void UpdateCell(int r, int c, char mark, ConsoleColor color)
     {
         // Блокируем доступ, чтобы проверка и отрисовка были единой операцией
-        lock (_locker)
+       // lock (_locker)
         {
             if (garden[r, c] == '.')
             {
