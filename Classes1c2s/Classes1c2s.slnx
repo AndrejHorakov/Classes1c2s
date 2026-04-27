@@ -1,0 +1,12 @@
+<Solution>
+  <Project Path="CollectionsPractice/CollectionsPractice.csproj" />
+  <Project Path="DelegatesExamle/DelegatesExamle.csproj" />
+  <Project Path="FilesClass/FilesClass.csproj" />
+  <Project Path="GCClass/GCClass.csproj" />
+  <Project Path="GenericClassWork/GenericClassWork.csproj" />
+  <Project Path="LinqWorking/LinqWorking.csproj" />
+  <Project Path="Multithreading/Multithreading.csproj" />
+  <Project Path="ObjectOrientedProgramming/ObjectOrientedProgramming.csproj" />
+  <Project Path="ObserverPattern/ObserverPattern.csproj" />
+  <Project Path="StreamClass/StreamClass.csproj" />
+</Solution>
