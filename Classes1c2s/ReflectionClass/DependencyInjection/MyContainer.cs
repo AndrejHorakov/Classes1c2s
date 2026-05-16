@@ -13,8 +13,8 @@ public class MyContainer
 
     private object Resolve(Type type)
     {
-        // TODO: Найти конструктор (type.GetConstructors().First())
-        // TODO: Получить параметры конструктора (GetParameters())
+        // TODO: Найти конструктор
+        // TODO: Получить параметры конструктора 
         // TODO: Рекурсивно вызвать Resolve для каждого параметра
         // TODO: Создать объект через Activator.CreateInstance(type, параметры)
         return null;

@@ -1,4 +1,5 @@
-﻿using ReflectionClass.MediatorImplementation.Abstraction;
+﻿using System.Reflection;
+using ReflectionClass.MediatorImplementation.Abstraction;
 
 namespace ReflectionClass.MediatorImplementation;
 
@@ -9,7 +10,7 @@ public class Mediator
 
     public void ScanAssembly()
     {
-        // TODO: Assembly.GetExecutingAssembly().GetTypes()
+        // TODO: Получить все типы из текущей сборки Assembly.GetExecutingAssembly()
         // TODO: Найти все классы, реализующие IHandler<T>
         // TODO: Сохранить в словарь: [Тип команды] -> [Тип обработчика]
     }
