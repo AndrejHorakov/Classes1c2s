@@ -1,14 +1,17 @@
-﻿using ReflectionClass.MediatorImplementation.Commands.Ping;
+﻿using System.Reflection;
+using ReflectionClass.MediatorImplementation.Commands.Ping;
 
 namespace ReflectionClass.MediatorImplementation;
 
-public class MediatorProgram
+public static class MediatorProgram
 {
-    static void Main(string[] args)
+    public static void Main()
     {
         var mediator = new Mediator();
         mediator.ScanAssembly(); // Он найдет PingHandler через рефлексию
-
+        
         mediator.Send(new PingCommand());
+
+        
     }
 }

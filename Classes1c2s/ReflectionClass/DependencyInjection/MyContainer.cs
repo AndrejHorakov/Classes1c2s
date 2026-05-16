@@ -4,19 +4,34 @@ public class MyContainer
 {
     private Dictionary<Type, Type> _registrations = new();
 
-    public void Register<TInterface, TImplementation>() { /* TODO */ }
-
-    public T Resolve<T>()
+    public void Register<TInterface, TImplementation>() where TImplementation : TInterface
     {
-        return (T)Resolve(typeof(T));
+        _registrations.Add(typeof(TInterface), typeof(TImplementation));
     }
 
-    private object Resolve(Type type)
+    public T? Resolve<T>() where T : class
     {
+        return Resolve(typeof(T)) as T;
+    }
+
+    private object? Resolve(Type type)
+    {
+        if (!_registrations.TryGetValue(type, out Type registration))
+            return null;
+        
         // TODO: Найти конструктор
         // TODO: Получить параметры конструктора 
         // TODO: Рекурсивно вызвать Resolve для каждого параметра
-        // TODO: Создать объект через Activator.CreateInstance(type, параметры)
-        return null;
+        // TODO: Создать объект
+        var constructor = registration.GetConstructors().First();
+        var parameters = constructor.GetParameters().ToList();
+        List<object> constructorParameters = [];
+        foreach (var parameter in parameters)
+        {
+            var parameterType = parameter.ParameterType;
+            constructorParameters.Add(Resolve(parameterType));
+        }
+        
+        return constructor.Invoke(constructorParameters.ToArray());
     }
 }
